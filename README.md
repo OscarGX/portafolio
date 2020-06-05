@@ -1,4 +1,6 @@
-# PortafolioOscarDev
+# Portafolio Personal Oscar Reyes
+## Nombre del proyecto
+Portafolio-OscarDev
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
