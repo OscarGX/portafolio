@@ -1,0 +1,46 @@
+<div class="container mt-5 bg-ccontent shadow-neon-primary rounded" id="aboutme">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-white">
+                <i class="fas fa-hashtag mt-3 me-2"></i> About Me</h3>
+            <hr class="text-white">
+            <p class="text-white">Thanks for visit my website, I'm Oscar Reyes Martínez, I'm a Software Engineer from Mexico.</p>
+            <br>
+            <h5 class="text-white">Education</h5>
+            <p class="text-white">I'm a graduate of <a href="https://uttt.edu.mx" target="_blank" class="ctext-link text-decoration-none">Universidad Tecnológica de Tula-Tepeji</a>, I studied the Information Technology career, I love programming!</p>
+            <br>
+            <h5 class="text-white">Languages and Tools</h5>
+            <p class="text-white">
+                I like to learn new programming languages and technologies to improve my knowledge and skills, these are the technologies I've worked with.
+            </p>
+            <swiper [config]="swiperConfig" class="mySwiper">
+                <ng-template swiperSlide *ngFor="let technology of technologies;">
+                    <i [class]="technology.iconClass" [title]="technology.title"></i>
+                </ng-template>
+            </swiper>
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+        </div>
+    </div>
+</div>
+<div class="container mt-5 mb-5 bg-ccontent shadow-neon-primary rounded">
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="text-white mt-3">Certifications</h5>
+            <div class="row mb-3">
+                <div class="col-md-4 d-flex">
+                    <div class="certification-avatar-container">
+                        <div class="certification-avatar">
+                            <i class="fas fa-award fs-3 text-white text-center"></i>
+                        </div>
+                    </div>
+                    <div class="certification-name-container ms-3">
+                        <p class="text-white mt-3">
+                            <a href="https://drive.google.com/file/d/1-xdCgIs8IQ8Sl7KOc6ZmuLccNcCuN4x_/view?usp=sharing" class="text-decoration-none ctext-link" target="_blank">Fundamentos para la innovación en la industria 4.0 con tecnologías Microsoft</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
