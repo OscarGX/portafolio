@@ -5,13 +5,11 @@
                 <!-- <h1 class="fw-bold text-center">Hi! My name is <strong class="green-one">Oscar</strong></h1>
                 <br> -->
                 <ngx-typed-js [strings]="[textOne]" [contentType]="'html'" [startDelay]="800" [showCursor]="false" [typeSpeed]="90" (completed)="doSmth()">
-                    <p class="text-center">
-                        <span class="typing fw-bold text-center fs-1"></span>
-                    </p>
+                    <h1 class="text-center"><span class="typing fw-bold"></span></h1>
                 </ngx-typed-js>
                 <br>
-                <ngx-typed-js [strings]="[textTwo]" [showCursor]="true" [typeSpeed]="80" *ngIf="showTwo">
-                    <p class="text-center"><span class="typing fw-bold text-center fs-4"></span></p>
+                <ngx-typed-js [strings]="[textTwo]" [showCursor]="true" [typeSpeed]="80" *ngIf="showTwo" class="text-center">
+                    <h4 class="text-center"><span class="typing fw-bold"></span></h4>
                 </ngx-typed-js>
                 <!-- <br>
                 <h4 class="fw-bold text-center">{{ "{ I'm a Software Developer }" }}</h4>
@@ -21,7 +19,8 @@
                 </p> -->
                 <br>
                 <p class="text-center">
-                    <button class="btn btn-csecondary">Download my CV</button>
+                    <!-- <button class="btn btn-csecondary">Download my CV</button> -->
+                    <a class="btn btn-csecondary" href="assets/docs/OscarReyes-CV.pdf" target="_blank" role="button">Download my CV</a>
                 </p>
             </div>
             <div class="col-md-6 img-margin">
