@@ -1,1 +1,107 @@
-<p>project-new works!</p>
+<div class="container mt-5 mb-5 bg-ccontent">
+    <div class="row">
+        <div class="col-md-12 text-white mt-3 mb-3">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <input type="text" class="form-control" formControlName="description">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Thumbnail</label>
+                    <input type="text" inputmode="url" class="form-control" formControlName="thumbnail">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Video</label>
+                    <input type="text" inputmode="url" class="form-control" formControlName="videoUrl">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Status</label>
+                    <select class="form-select" formControlName="status">
+                        <option value="">Selecciona</option>
+                        <option *ngFor="let stat of status" [value]="stat.value"> {{ stat.text }} </option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Year</label>
+                    <input type="number" inputmode="numeric" class="form-control" formControlName="year">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Client Name</label>
+                    <input type="text" class="form-control" formControlName="clientName">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tags</label>
+                    <select class="form-select" multiple formControlName="tags">
+                        <option value="">Selecciona</option>
+                        <option *ngFor="let tag of tags" [value]="tag.id"> {{ tag.value }} </option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Technologies</label>
+                    <select class="form-select" multiple formControlName="technologies">
+                        <option value="">Selecciona</option>
+                        <option *ngFor="let tech of techs" [value]="tech.id"> {{ tech.name }} </option>
+                    </select>
+                </div>
+                <div class="row mt-3">
+                    <h5>Repos</h5>
+                    <div class="col-md-12">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                            <div class="btn-group me-2" role="group" aria-label="First group">
+                                <button type="button" class="btn btn-success" (click)="addSkuItem()">
+                                    <i class="fas fa-plus-square"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3" formArrayName="repos">
+                    <div class="row mt-3" *ngFor="let repo of repos.controls; let i = index;">
+                        <div class="col-md-12" [formGroupName]="i">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="name" formControlName="name">
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="description" formControlName="description">
+                                </div>
+                                <div class="col-md-3">
+                                    <select class="form-select" formControlName="platform">
+                                        <option value="">Selecciona</option>
+                                        <option *ngFor="let platform of sourceControlPlatforms" [value]="platform.value"> {{ platform.text }} </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" inputmode="url" class="form-control" placeholder="url" formControlName="url">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" formControlName="public">
+                                        <label class="form-check-label">
+                                          Public
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-danger" *ngIf="i > 0" (click)="deleteSkuItem(i)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-csecondary" [disabled]="form.invalid">Registrar</button>
+                <p>
+                    {{ form.value | json }}
+                </p>
+            </form>
+        </div>
+    </div>
+</div>

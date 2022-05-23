@@ -10,6 +10,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SwiperModule } from 'swiper/angular';
 import { ContactComponent } from './components/contact/contact.component';
 import { NgxTypedJsModule } from 'ngx-typed-js';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
     MainRoutingModule,
     SwiperModule,
     NgxTypedJsModule,
+    SharedModule,
   ]
 })
 export class MainModule { }
