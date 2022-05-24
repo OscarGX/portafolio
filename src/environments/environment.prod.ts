@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiEndpoint: '',
+  apiEndpoint: 'https://oscargx-potafolio-api.herokuapp.com/api/v1',
 };

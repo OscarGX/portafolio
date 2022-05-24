@@ -51,7 +51,8 @@
                             <li class="list-unstyled" *ngFor="let repo of project.repos">
                                 <i [class]="repo.platform | projectRepo"></i>
                                 <span class="ms-1"> {{ repo.description }}: </span>
-                                <a [href]="repo.url" target="_blank" class="text-decoration-none ctext-link"> {{ repo.name }} </a>
+                                <a [href]="repo.url" target="_blank" class="text-decoration-none ctext-link" *ngIf="repo.public"> {{ repo.name }} </a>
+                                <span *ngIf="!repo.public">This project repo is private!</span>
                             </li>
                         </ul>
                         <p>

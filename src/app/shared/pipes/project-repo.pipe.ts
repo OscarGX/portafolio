@@ -7,7 +7,6 @@ import { SourceControlPlatformEnum } from 'src/app/common/enum';
 export class ProjectRepoPipe implements PipeTransform {
 
   transform(platform: string): string {
-    console.log('salaverga platform pipe');
     switch (platform) {
       case SourceControlPlatformEnum.GITHUB:
         return 'fab fa-github';
