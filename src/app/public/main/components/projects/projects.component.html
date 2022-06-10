@@ -39,7 +39,10 @@
                 <div class="row">
                     <div class="col-12">
                         <!-- <iframe src="https://res.cloudinary.com/dbttghvhv/video/upload/v1653267159/portafolio-oscargx/videos/test-face-verify_tvnem5.mp4" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" height="300" width="100%" frameborder="0"></iframe> -->
-                        <iframe [src]="project.videoUrl | urlSanitizer" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" height="300" width="100%" frameborder="0"></iframe>
+                        <!-- <iframe [src]="project.videoUrl | urlSanitizer" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" height="300" width="100%" frameborder="0"></iframe> -->
+                        <div class="ratio ratio-21x9">
+                            <video preload="auto" controls [src]="project.videoUrl | urlSanitizer"></video>
+                        </div>
                     </div>
                     <div class="col-12 mt-3">
                         <p>
