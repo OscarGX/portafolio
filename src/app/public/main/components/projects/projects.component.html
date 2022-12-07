@@ -8,7 +8,18 @@
             <hr class="text-white">
         </div>
         <div class="col-md-12 mb-5">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="row" *ngIf="apiError">
+                <div class="col-md-12">
+                    <div class="card bg-dark text-white cursor-pointer">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Something went wrong, sorry, I'm working on it and projects will be available soon...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="!apiError">
                 <div class="col" *ngFor="let project of projects; let i = index;">
                     <div class="card bg-dark text-white cursor-pointer" (click)="projectCardClick(i)" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <img [src]="project.thumbnail" class="card-img-top" [alt]="project.name">

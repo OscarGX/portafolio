@@ -12,6 +12,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   projects: IProjectRead[] = [];
   project!: IProjectRead;
+  public apiError = false;
   private subscription = new Subscription();
 
   constructor(private projectService: ProjectService) { }
@@ -22,6 +23,9 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         this.projects = data;
         this.project = data[0];
       }
+    }, (e) => {
+      this.projects = [];
+      this.apiError = true;
     }));
   }
 
