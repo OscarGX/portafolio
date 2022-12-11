@@ -7,6 +7,7 @@ import { ProjectNewComponent } from './pages/project-new/project-new.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VideoTestComponent } from './pages/video-test/video-test.component';
 import { NgxTypedJsModule } from 'ngx-typed-js';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
     CommonModule,
     ProjectRoutingModule,
     ReactiveFormsModule,
-    NgxTypedJsModule
+    NgxTypedJsModule,
+    AngularFirestoreModule
   ]
 })
 export class ProjectModule { }

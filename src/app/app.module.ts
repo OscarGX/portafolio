@@ -7,6 +7,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiPrefixInterceptor } from './common/interceptors/api-prefix.interceptor';
 import { HttpTokenInterceptor } from './common/interceptors/http-token.interceptor';
 import { RefreshTokenInterceptor } from './common/interceptors/refresh-token.interceptor';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { RefreshTokenInterceptor } from './common/interceptors/refresh-token.int
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiPrefixInterceptor, multi: true },

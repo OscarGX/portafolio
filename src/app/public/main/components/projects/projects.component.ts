@@ -18,7 +18,16 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
-    this.subscription.add(this.projectService.getAll().subscribe(data => {
+    /* this.subscription.add(this.projectService.getAll().subscribe(data => {
+      if (data && data.length > 0) {
+        this.projects = data;
+        this.project = data[0];
+      }
+    }, (e) => {
+      this.projects = [];
+      this.apiError = true;
+    })); */
+    this.subscription.add(this.projectService.getAllFirebase().subscribe(data => {
       if (data && data.length > 0) {
         this.projects = data;
         this.project = data[0];
