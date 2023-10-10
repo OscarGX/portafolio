@@ -57,6 +57,10 @@ export class AboutMeComponent {
         title: 'JavaScript',
       },
       {
+        iconClass: 'devicon-typescript-original colored cursor-pointer fs-0',
+        title: 'TypeScript',
+      },
+      {
         iconClass: 'devicon-angularjs-plain colored cursor-pointer fs-0',
         title: 'Angular',
       },
