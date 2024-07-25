@@ -13,9 +13,9 @@
   "dependencies": {
     "@angular/animations": "~12.1.2",
     "@angular/common": "~12.1.2",
+    "@angular/fire": "^6.0.2",
     "@angular/compiler": "~12.1.2",
     "@angular/core": "~12.1.2",
-    "@angular/fire": "^6.0.2",
     "@angular/forms": "~12.1.2",
     "@angular/platform-browser": "~12.1.2",
     "@angular/platform-browser-dynamic": "~12.1.2",
@@ -27,13 +27,13 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.1.2",
-    "@angular-eslint/builder": "^18.1.0",
+    "@angular-devkit/build-angular": "~12.1.2",
+    "@angular-eslint/builder": "12.7.0",
     "@angular-eslint/eslint-plugin": "12.7.0",
     "@angular-eslint/eslint-plugin-template": "12.7.0",
-    "@angular-eslint/schematics": "^18.1.0",
+    "@angular-eslint/schematics": "12.7.0",
     "@angular-eslint/template-parser": "12.7.0",
-    "@angular/cli": "^18.1.2",
+    "@angular/cli": "~12.1.2",
     "@angular/compiler-cli": "~12.1.2",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
