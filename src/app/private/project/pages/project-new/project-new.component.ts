@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TagService } from '../../../tag/services/tag.service';
 import { TechnologyService } from '../../../technology/services/technology.service';
-import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, UntypedFormArray, UntypedFormGroup, Validators } from '@angular/forms';
 import { ProjectService } from '../../services/project.service';
 import { Subscription } from 'rxjs';
 import { ITagRead } from 'src/app/private/tag/services/interface';
@@ -28,7 +28,7 @@ export class ProjectNewComponent implements OnInit, OnDestroy {
     private tagService: TagService,
     private techService: TechnologyService,
     private projectService: ProjectService,
-    private fb: UntypedFormBuilder,
+    private fb: FormBuilder,
   ) {
     this.createForm();
     this.status = [

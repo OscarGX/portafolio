@@ -7,8 +7,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiPrefixInterceptor } from './common/interceptors/api-prefix.interceptor';
 import { HttpTokenInterceptor } from './common/interceptors/http-token.interceptor';
 import { RefreshTokenInterceptor } from './common/interceptors/refresh-token.interceptor';
-import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AngularFireModule } from '@angular/fire';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiPrefixInterceptor, multi: true },

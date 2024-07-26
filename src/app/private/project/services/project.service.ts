@@ -2,17 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IProjectCreate, IProjectRead } from '../interface';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { collection, collectionData, CollectionReference, DocumentData, Firestore } from '@angular/fire/firestore';
+import { getDownloadURL, ref, Storage, StorageReference } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
 
-  private collection: AngularFirestoreCollection<IProjectRead>;
+  private collection: CollectionReference<DocumentData>;
+  /* private storageRef: StorageReference; */
 
-  constructor(private http: HttpClient, private firestore: AngularFirestore) {
-    this.collection = this.firestore.collection('projects');
+  constructor(private http: HttpClient, private firestore: Firestore, private storage: Storage) {
+    this.collection = collection(this.firestore, 'projects');
   }
 
   public getAll(): Observable<IProjectRead[]> {
@@ -24,6 +26,12 @@ export class ProjectService {
   }
 
   public getAllFirebase() {
-    return this.collection.valueChanges();
+    return collectionData(this.collection) as Observable<IProjectRead[]>;
   }
+
+ /*  public getFirebaseFiles() {
+    console.log(this.storageRef);
+    return;
+    return getDownloadURL(this.storageRef);
+  } */
 }

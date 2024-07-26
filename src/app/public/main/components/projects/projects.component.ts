@@ -36,6 +36,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       this.projects = [];
       this.apiError = true;
     }));
+    /* this.projectService.getFirebaseFiles(); */
   }
 
   ngOnDestroy(): void {
