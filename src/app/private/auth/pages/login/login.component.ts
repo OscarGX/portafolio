@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
@@ -12,11 +12,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnDestroy {
 
-  public form!: FormGroup;
+  public form!: UntypedFormGroup;
   public isLoading = false;
   private subscription = new Subscription();
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private fb: UntypedFormBuilder, private authService: AuthService, private router: Router) {
     this.createForm();
   }
 

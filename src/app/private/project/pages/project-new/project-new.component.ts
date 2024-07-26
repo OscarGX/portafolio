@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TagService } from '../../../tag/services/tag.service';
 import { TechnologyService } from '../../../technology/services/technology.service';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ProjectService } from '../../services/project.service';
 import { Subscription } from 'rxjs';
 import { ITagRead } from 'src/app/private/tag/services/interface';
@@ -21,14 +21,14 @@ export class ProjectNewComponent implements OnInit, OnDestroy {
   public techs: ITechnologyRead[] = [];
   public status: { text: string; value: number; }[];
   public sourceControlPlatforms: { text: string; value: string; }[];
-  public form!: FormGroup;
+  public form!: UntypedFormGroup;
   private subscription = new Subscription();
 
   constructor(
     private tagService: TagService,
     private techService: TechnologyService,
     private projectService: ProjectService,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
   ) {
     this.createForm();
     this.status = [
@@ -142,8 +142,8 @@ export class ProjectNewComponent implements OnInit, OnDestroy {
     this.repos.push(repoItem);
   }
 
-  public get repos(): FormArray {
-    return this.form.get('repos') as FormArray;
+  public get repos(): UntypedFormArray {
+    return this.form.get('repos') as UntypedFormArray;
   }
 
   addSkuItem(): void {
